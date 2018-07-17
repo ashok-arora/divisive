@@ -5,7 +5,7 @@ function! s:Devisive()
         let file = &ft
         if ( file == "c" )
                 execute '!gcc' g:flags '-g -o output "%" -lm && ./output' g:args
-        if ( file == "cpp" )
+        elseif ( file == "cpp" )
                 execute '!g++' g:flags '-g -o output "%" -lm && ./output' g:args
         elseif ( file == "python" )
                 execute '!python "%"' g:args
